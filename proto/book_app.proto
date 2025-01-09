@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package book_app;
+
+option go_package = "./book_app";
+
+
+message SignUp {
+    string userName=1;
+    string email = 2;
+    string password = 3;
+}
+
+message SignUpStatus {
+    bool status = 1;
+}
+
+service BookAppBackend {
+    rpc SignUpService(SignUp) returns (SignUpStatus);
+}
